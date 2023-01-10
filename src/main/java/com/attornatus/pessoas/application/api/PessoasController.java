@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -29,5 +30,14 @@ public class PessoasController implements PessoasAPI {
         Optional<Pessoa> pessoa = pessoaService.buscaPessoaPorId(idPessoa);
         log.info("[finaliza] PessoasController - buscaPessoaPorId");
         return pessoa;
+
+    }
+
+    @Override
+    public List<ListPessoas> buscaTodasPessoas() {
+        log.info("[inicia] PessoasController - buscaTodasPessoas");
+        List<ListPessoas> pessoasList = pessoaService.buscaTodasPessoas();
+        log.info("[finaliza] PessoasController - buscaTodasPessoas");
+        return pessoasList;
     }
 }

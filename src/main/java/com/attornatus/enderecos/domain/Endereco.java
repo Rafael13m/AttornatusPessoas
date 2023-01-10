@@ -21,13 +21,4 @@ public class Endereco {
     private int cep;
     private int numero;
     private String cidade;
-
-//    public Endereco(PessoaRequest pessoaRequest) {
-//
-//        this.logradouro = pessoaRequest.getLogradouro();
-//        this.cep = pessoaRequest.getCep();
-//        this.numero = pessoaRequest.getNumero();
-//        this.cidade = pessoaRequest.getCidade();
-//
-//    }
 }
