@@ -1,6 +1,7 @@
 package com.attornatus.enderecos.domain;
 
 import com.attornatus.pessoas.application.api.PessoaRequest;
+import com.attornatus.pessoas.domain.Pessoa;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
