@@ -6,6 +6,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+import java.util.UUID;
+
 @Repository
 @Slf4j
 @RequiredArgsConstructor
@@ -17,6 +20,12 @@ public class PessoaInfraRepository implements PessoaRepository {
         log.info("[inicia] PessoaInfraRepository - salva");
         pessoaJpaRepository.save(pessoa);
         log.info("[finaliza] PessoaInfraRepository - salva");
+        return pessoa;
+    }
+
+    @Override
+    public Optional<Pessoa> buscaPessoaPorId(UUID idPessoa) {
+        Optional<Pessoa> pessoa = pessoaJpaRepository.findById(idPessoa);
         return pessoa;
     }
 }

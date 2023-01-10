@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Entity
 @NoArgsConstructor
@@ -22,12 +23,12 @@ public class Pessoa {
     private UUID idPessoa;
     private String nome;
     private LocalDate dataNascimento;
-//    @OneToMany
-//    private List<Endereco> enderecos;
+    @OneToMany(cascade=CascadeType.PERSIST)
+    private List<Endereco> enderecos;
 
     public Pessoa(PessoaRequest pessoaRequest) {
         this.nome = pessoaRequest.getNome();
         this.dataNascimento = pessoaRequest.getDataNascimento();
-//        this.enderecos = pessoaRequest.getEndereco();
+        this.enderecos = pessoaRequest.getEnderecos();
     }
 }

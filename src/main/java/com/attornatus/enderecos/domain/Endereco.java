@@ -1,16 +1,16 @@
 package com.attornatus.enderecos.domain;
 
-import lombok.AllArgsConstructor;
+import com.attornatus.pessoas.application.api.PessoaRequest;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Data
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 public class Endereco {
 
     @Id
@@ -22,5 +22,12 @@ public class Endereco {
     private int numero;
     private String cidade;
 
-    }
-
+//    public Endereco(PessoaRequest pessoaRequest) {
+//
+//        this.logradouro = pessoaRequest.getLogradouro();
+//        this.cep = pessoaRequest.getCep();
+//        this.numero = pessoaRequest.getNumero();
+//        this.cidade = pessoaRequest.getCidade();
+//
+//    }
+}
