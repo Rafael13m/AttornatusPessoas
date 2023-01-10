@@ -1,5 +1,6 @@
 package com.attornatus.pessoas.application.service;
 
+import com.attornatus.enderecos.application.api.EnderecoRequest;
 import com.attornatus.pessoas.application.api.*;
 import com.attornatus.pessoas.application.repository.PessoaRepository;
 import com.attornatus.pessoas.domain.Pessoa;
@@ -50,4 +51,7 @@ public class PessoaApplicationService implements PessoaService {
         pessoaRepository.salva(pessoa);
         log.info("[finaliza] PessoaApplicationService - alteraPessoa");
     }
+
+
+
 }

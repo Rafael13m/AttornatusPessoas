@@ -1,6 +1,7 @@
 package com.attornatus.pessoas.domain;
 
 
+import com.attornatus.enderecos.application.api.EnderecoRequest;
 import com.attornatus.enderecos.domain.Endereco;
 import com.attornatus.pessoas.application.api.PessoaAlteracao;
 import com.attornatus.pessoas.application.api.PessoaRequest;
@@ -37,6 +38,10 @@ public class Pessoa {
         this.nome = pessoaAlteracao.getNome();
         this.dataNascimento = pessoaAlteracao.getDataNascimento();
         this.enderecos = pessoaAlteracao.getEnderecos();
-
     }
+
+    public void adicionarEndereco(EnderecoRequest enderecoRequest){
+        enderecos.add(new Endereco(enderecoRequest));
+    }
+
 }

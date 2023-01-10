@@ -1,5 +1,6 @@
 package com.attornatus.enderecos.domain;
 
+import com.attornatus.enderecos.application.api.EnderecoRequest;
 import com.attornatus.pessoas.application.api.PessoaRequest;
 import com.attornatus.pessoas.domain.Pessoa;
 import lombok.Data;
@@ -22,4 +23,14 @@ public class Endereco {
     private int cep;
     private int numero;
     private String cidade;
+
+    public Endereco(EnderecoRequest enderecoRequest) {
+
+        this.logradouro = enderecoRequest.getLogradouro();
+        this.cep = enderecoRequest.getCep();
+        this.numero = enderecoRequest.getNumero();
+        this.cidade = enderecoRequest.getCidade();
+
+
+    }
 }
