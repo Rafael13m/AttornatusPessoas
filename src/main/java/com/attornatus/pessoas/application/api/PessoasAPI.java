@@ -6,6 +6,7 @@ import com.attornatus.pessoas.domain.Pessoa;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -20,5 +21,11 @@ public interface PessoasAPI {
     @GetMapping(value = "/{idPessoa}")
     @ResponseStatus(code = HttpStatus.OK)
     Optional<Pessoa> buscaPessoaPorId(@PathVariable UUID idPessoa);
+
+    @GetMapping
+    @ResponseStatus(code = HttpStatus.OK)
+    List<ListPessoas> buscaTodasPessoas();
+
+
 
 }
