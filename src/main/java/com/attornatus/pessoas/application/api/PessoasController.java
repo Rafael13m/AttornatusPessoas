@@ -1,5 +1,6 @@
 package com.attornatus.pessoas.application.api;
 
+import com.attornatus.enderecos.application.api.EnderecoRequest;
 import com.attornatus.pessoas.application.service.PessoaService;
 import com.attornatus.pessoas.domain.Pessoa;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ public class PessoasController implements PessoasAPI {
 
     private final PessoaService pessoaService;
     @Override
-    public PessoaResponse criarPessoa(PessoaRequest pessoaRequest) {
+    public PessoaResponse AdicionarPessoa(PessoaRequest pessoaRequest) {
         log.info("[inicia] PessoasController - criarPessoa");
         PessoaResponse pessoaResponse = pessoaService.criarPessoa(pessoaRequest);
         log.info("[finaliza] PessoasController - criarPessoa");
@@ -25,7 +26,7 @@ public class PessoasController implements PessoasAPI {
     }
 
     @Override
-    public List<ListPessoas> buscaTodasPessoas() {
+    public List<ListPessoas> buscarTodasPessoas() {
         log.info("[inicia] PessoasController - buscaTodasPessoas");
         List<ListPessoas> pessoasList = pessoaService.buscaTodasPessoas();
         log.info("[finaliza] PessoasController - buscaTodasPessoas");
@@ -33,7 +34,7 @@ public class PessoasController implements PessoasAPI {
     }
 
     @Override
-    public PessoaDTO buscaPessoaPorId(UUID idPessoa) {
+    public PessoaDTO buscarPessoaPorId(UUID idPessoa) {
         log.info("[inicia] PessoasController - buscaPessoaPorId");
         PessoaDTO pessoa = pessoaService.buscaPessoaPorId(idPessoa);
         log.info("[finaliza] PessoasController - buscaPessoaPorId");
@@ -42,9 +43,11 @@ public class PessoasController implements PessoasAPI {
     }
 
     @Override
-    public void AlteraPessoa(UUID idPessoa, PessoaAlteracao pessoaAlteracao) {
+    public void AlterarPessoa(UUID idPessoa, PessoaAlteracao pessoaAlteracao) {
         log.info("[inicia] PessoasController - buscaPessoaPorId");
         pessoaService.alteraPessoa(pessoaAlteracao, idPessoa);
         log.info("[finaliza] PessoasController - buscaPessoaPorId");
     }
+
+
 }

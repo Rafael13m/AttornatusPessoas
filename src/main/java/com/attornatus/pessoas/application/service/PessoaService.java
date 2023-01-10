@@ -1,5 +1,6 @@
 package com.attornatus.pessoas.application.service;
 
+import com.attornatus.enderecos.application.api.EnderecoRequest;
 import com.attornatus.pessoas.application.api.*;
 
 import java.util.List;
@@ -13,4 +14,6 @@ public interface PessoaService {
     List<ListPessoas> buscaTodasPessoas();
 
     void alteraPessoa(PessoaAlteracao pessoaAlteracao, UUID idPessoa);
+
+
 }
