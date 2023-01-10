@@ -1,10 +1,10 @@
-package com.attornatuspessoas;
+package com.attornatus;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AttornatusPessoasApplicationTests {
+class AttornatusApplicationTests {
 
     @Test
     void contextLoads() {
