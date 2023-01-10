@@ -1,13 +1,13 @@
-package com.attornatuspessoas;
+package com.attornatus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AttornatusPessoasApplication {
+public class AttornatusApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AttornatusPessoasApplication.class, args);
+        SpringApplication.run(AttornatusApplication.class, args);
     }
 
 }
