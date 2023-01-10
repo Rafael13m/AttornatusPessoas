@@ -2,6 +2,7 @@ package com.attornatus.pessoas.domain;
 
 
 import com.attornatus.enderecos.domain.Endereco;
+import com.attornatus.pessoas.application.api.PessoaAlteracao;
 import com.attornatus.pessoas.application.api.PessoaRequest;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,12 +24,19 @@ public class Pessoa {
     private UUID idPessoa;
     private String nome;
     private LocalDate dataNascimento;
-    @OneToMany(cascade=CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Endereco> enderecos;
 
     public Pessoa(PessoaRequest pessoaRequest) {
         this.nome = pessoaRequest.getNome();
         this.dataNascimento = pessoaRequest.getDataNascimento();
         this.enderecos = pessoaRequest.getEnderecos();
+    }
+
+    public void altera(PessoaAlteracao pessoaAlteracao) {
+        this.nome = pessoaAlteracao.getNome();
+        this.dataNascimento = pessoaAlteracao.getDataNascimento();
+        this.enderecos = pessoaAlteracao.getEnderecos();
+
     }
 }

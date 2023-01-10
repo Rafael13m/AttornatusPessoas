@@ -16,15 +16,19 @@ public interface PessoasAPI {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    PessoaResponse criarPessoa(@Valid @RequestBody PessoaRequest pessoaRequest);
-
-    @GetMapping(value = "/{idPessoa}")
-    @ResponseStatus(code = HttpStatus.OK)
-    Optional<Pessoa> buscaPessoaPorId(@PathVariable UUID idPessoa);
+    PessoaResponse criarPessoa(@RequestBody PessoaRequest pessoaRequest);
 
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     List<ListPessoas> buscaTodasPessoas();
+
+    @GetMapping(value = "/{idPessoa}")
+    @ResponseStatus(code = HttpStatus.OK)
+    PessoaDTO buscaPessoaPorId(@PathVariable UUID idPessoa);
+
+    @PatchMapping(value = "/{idPessoa}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void AlteraPessoa(@PathVariable UUID idPessoa, @RequestBody PessoaAlteracao pessoaAlteracao);
 
 
 

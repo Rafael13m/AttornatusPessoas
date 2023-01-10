@@ -26,9 +26,10 @@ public class PessoaInfraRepository implements PessoaRepository {
     }
 
     @Override
-    public Optional<Pessoa> buscaPessoaPorId(UUID idPessoa) {
+    public Pessoa buscaPessoaPorId(UUID idPessoa) {
         log.info("[inicia] PessoaInfraRepository - buscaPessoaPorId");
-        Optional<Pessoa> pessoa = pessoaJpaRepository.findById(idPessoa);
+        Pessoa pessoa = pessoaJpaRepository.findById(idPessoa)
+                .orElseThrow();
         log.info("[finaliza] PessoaInfraRepository - buscaPessoaPorId");
         return pessoa;
     }

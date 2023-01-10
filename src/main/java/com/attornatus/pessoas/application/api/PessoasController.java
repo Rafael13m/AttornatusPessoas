@@ -25,19 +25,26 @@ public class PessoasController implements PessoasAPI {
     }
 
     @Override
-    public Optional<Pessoa> buscaPessoaPorId(UUID idPessoa) {
+    public List<ListPessoas> buscaTodasPessoas() {
+        log.info("[inicia] PessoasController - buscaTodasPessoas");
+        List<ListPessoas> pessoasList = pessoaService.buscaTodasPessoas();
+        log.info("[finaliza] PessoasController - buscaTodasPessoas");
+        return pessoasList;
+    }
+
+    @Override
+    public PessoaDTO buscaPessoaPorId(UUID idPessoa) {
         log.info("[inicia] PessoasController - buscaPessoaPorId");
-        Optional<Pessoa> pessoa = pessoaService.buscaPessoaPorId(idPessoa);
+        PessoaDTO pessoa = pessoaService.buscaPessoaPorId(idPessoa);
         log.info("[finaliza] PessoasController - buscaPessoaPorId");
         return pessoa;
 
     }
 
     @Override
-    public List<ListPessoas> buscaTodasPessoas() {
-        log.info("[inicia] PessoasController - buscaTodasPessoas");
-        List<ListPessoas> pessoasList = pessoaService.buscaTodasPessoas();
-        log.info("[finaliza] PessoasController - buscaTodasPessoas");
-        return pessoasList;
+    public void AlteraPessoa(UUID idPessoa, PessoaAlteracao pessoaAlteracao) {
+        log.info("[inicia] PessoasController - buscaPessoaPorId");
+        pessoaService.alteraPessoa(pessoaAlteracao, idPessoa);
+        log.info("[finaliza] PessoasController - buscaPessoaPorId");
     }
 }
