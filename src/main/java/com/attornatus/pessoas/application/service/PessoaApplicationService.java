@@ -1,6 +1,5 @@
 package com.attornatus.pessoas.application.service;
 
-import com.attornatus.enderecos.application.api.EnderecoRequest;
 import com.attornatus.pessoas.application.api.*;
 import com.attornatus.pessoas.application.repository.PessoaRepository;
 import com.attornatus.pessoas.domain.Pessoa;
@@ -47,7 +46,7 @@ public class PessoaApplicationService implements PessoaService {
     public void alteraPessoa(PessoaAlteracao pessoaAlteracao, UUID idPessoa) {
         log.info("[inicia] PessoaApplicationService - alteraPessoa");
         Pessoa pessoa = pessoaRepository.buscaPessoaPorId(idPessoa);
-        pessoa.altera(pessoaAlteracao);
+        pessoa.alterar(pessoaAlteracao);
         pessoaRepository.salva(pessoa);
         log.info("[finaliza] PessoaApplicationService - alteraPessoa");
     }

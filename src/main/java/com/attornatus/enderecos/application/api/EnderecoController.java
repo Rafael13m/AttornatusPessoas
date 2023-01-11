@@ -18,7 +18,7 @@ public class EnderecoController implements EnderecoAPI {
     @Override
     public void adicionarEndereco(UUID idPessoa, EnderecoRequest enderecoRequest) {
         log.info("[inicia] EnderecoController - novoEndereco");
-        enderecosService.adicionaEndereco(idPessoa, enderecoRequest);
+        enderecosService.adicionarEndereco(idPessoa, enderecoRequest);
         log.info("[finaliza] EnderecoController - novoEndereco");
     }
 
@@ -28,6 +28,14 @@ public class EnderecoController implements EnderecoAPI {
         List<EnderecoDTO> enderecoDTOS = enderecosService.buscarEnderecosDePessoas(idPessoa);
         log.info("[finaliza] EnderecoController - buscarEnderecosDePessoa");
         return enderecoDTOS;
+    }
+
+    @Override
+    public List<EnderecoDTO> buscarEnderecoPrincipal(UUID idPessoa) {
+        log.info("[inicia] EnderecoController - buscarEnderecoPrincipal");
+        List<EnderecoDTO> edereco = enderecosService.buscarEnderecoPrincipal(idPessoa);
+        log.info("[finaliza] EnderecoController - buscarEnderecoPrincipal");
+        return edereco;
     }
 }
 

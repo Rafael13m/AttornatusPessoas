@@ -1,8 +1,10 @@
 package com.attornatus.pessoas.domain;
 
 
+import com.attornatus.enderecos.application.api.EnderecoDTO;
 import com.attornatus.enderecos.application.api.EnderecoRequest;
 import com.attornatus.enderecos.domain.Endereco;
+import com.attornatus.enderecos.domain.EnderecoPrincipal;
 import com.attornatus.pessoas.application.api.PessoaAlteracao;
 import com.attornatus.pessoas.application.api.PessoaRequest;
 import lombok.Data;
@@ -34,7 +36,7 @@ public class Pessoa {
         this.enderecos = pessoaRequest.getEnderecos();
     }
 
-    public void altera(PessoaAlteracao pessoaAlteracao) {
+    public void alterar(PessoaAlteracao pessoaAlteracao) {
         this.nome = pessoaAlteracao.getNome();
         this.dataNascimento = pessoaAlteracao.getDataNascimento();
         this.enderecos = pessoaAlteracao.getEnderecos();
@@ -44,4 +46,9 @@ public class Pessoa {
         enderecos.add(new Endereco(enderecoRequest));
     }
 
+    public List<Endereco> buscarEnderecoPrincipal(){
+        return enderecos.stream()
+                .filter(endereco -> endereco.getEnderecoPrincipal() == EnderecoPrincipal.PRINCIPAL)
+                .collect(Collectors.toList());
+    }
 }
