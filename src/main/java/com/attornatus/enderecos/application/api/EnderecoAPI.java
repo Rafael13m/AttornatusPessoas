@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("enderecos")
+@RequestMapping("v1/enderecos")
 public interface EnderecoAPI {
 
     @PostMapping(value = "/novoendereco/{idPessoa}")
@@ -17,6 +17,10 @@ public interface EnderecoAPI {
     @GetMapping(value = "/{idPessoa}")
     @ResponseStatus(code = HttpStatus.OK)
     List<EnderecoDTO> buscarEnderecosDePessoa(@PathVariable UUID idPessoa);
+
+    @GetMapping (value ="/bucarenderecoprincipal/{idPessoa}")
+    @ResponseStatus(code = HttpStatus.OK)
+    List<EnderecoDTO> buscarEnderecoPrincipal(@PathVariable UUID idPessoa);
 
 
 }

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("pessoas")
+@RequestMapping("v1/pessoas")
 public interface PessoasAPI {
 
     @PostMapping
