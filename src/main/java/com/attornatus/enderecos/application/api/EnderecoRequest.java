@@ -9,5 +9,4 @@ public class EnderecoRequest {
     private int cep;
     private int numero;
     private String cidade;
-
 }

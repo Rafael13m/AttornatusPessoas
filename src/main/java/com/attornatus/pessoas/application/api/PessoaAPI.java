@@ -8,11 +8,11 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("v1/pessoas")
-public interface PessoasAPI {
+public interface PessoaAPI {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    PessoaResponse AdicionarPessoa(@RequestBody PessoaRequest pessoaRequest);
+    PessoaResponse adicionarPessoa(@RequestBody PessoaRequest pessoaRequest);
 
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
@@ -24,9 +24,5 @@ public interface PessoasAPI {
 
     @PatchMapping(value = "/{idPessoa}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    void AlterarPessoa(@PathVariable UUID idPessoa, @RequestBody PessoaAlteracao pessoaAlteracao);
-
-
-
-
+    void alterarPessoa(@PathVariable UUID idPessoa, @RequestBody PessoaAlteracao pessoaAlteracao);
 }

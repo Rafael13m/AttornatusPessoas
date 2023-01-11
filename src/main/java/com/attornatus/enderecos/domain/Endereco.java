@@ -22,7 +22,6 @@ public class Endereco {
     private String cidade;
     private EnderecoPrincipal enderecoPrincipal = EnderecoPrincipal.PRINCIPAL;
 
-
     public Endereco(EnderecoRequest enderecoRequest) {
         this.logradouro = enderecoRequest.getLogradouro();
         this.cep = enderecoRequest.getCep();

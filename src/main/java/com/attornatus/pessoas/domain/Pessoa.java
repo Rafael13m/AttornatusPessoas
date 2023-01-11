@@ -1,7 +1,6 @@
 package com.attornatus.pessoas.domain;
 
 
-import com.attornatus.enderecos.application.api.EnderecoDTO;
 import com.attornatus.enderecos.application.api.EnderecoRequest;
 import com.attornatus.enderecos.domain.Endereco;
 import com.attornatus.enderecos.domain.EnderecoPrincipal;

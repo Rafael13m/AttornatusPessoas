@@ -17,40 +17,37 @@ public class PessoaApplicationService implements PessoaService {
 
     private final PessoaRepository pessoaRepository;
     @Override
-    public PessoaResponse criarPessoa(PessoaRequest pessoaRequest) {
-        log.info("[inicia] PessoaApplicationService - criarPessoa");
-        Pessoa pessoa = pessoaRepository.salva(new Pessoa(pessoaRequest));
-        log.info("[finaliza] PessoaApplicationService - criarPessoa");
+    public PessoaResponse adicionarPessoa(PessoaRequest pessoaRequest) {
+        log.info("[inicia] PessoaApplicationService - adicionarPessoa");
+        Pessoa pessoa = pessoaRepository.salvarPessoa(new Pessoa(pessoaRequest));
+        log.info("[finaliza] PessoaApplicationService - adicionarPessoa");
         return PessoaResponse.builder()
                 .idPessoa(pessoa.getIdPessoa())
                 .build();
     }
 
     @Override
-    public List<ListPessoas> buscaTodasPessoas() {
-        log.info("[inicia] PessoaApplicationService - buscaTodasPessoas");
-        List<Pessoa> listPessoas = pessoaRepository.buscaTodasPessoas();
-        log.info("[finaliza] PessoaApplicationService - buscaTodasPessoas");
+    public List<ListPessoas> buscarTodasPessoas() {
+        log.info("[inicia] PessoaApplicationService - buscarTodasPessoas");
+        List<Pessoa> listPessoas = pessoaRepository.buscarTodasPessoas();
+        log.info("[finaliza] PessoaApplicationService - buscarTodasPessoas");
         return ListPessoas.converte(listPessoas);
     }
 
     @Override
-    public PessoaDTO buscaPessoaPorId(UUID idPessoa) {
-        log.info("[inicia] PessoaApplicationService - buscaPessoaPorId");
-        Pessoa pessoa = pessoaRepository.buscaPessoaPorId(idPessoa);
-        log.info("[finaliza] PessoaApplicationService - buscaPessoaPorId");
+    public PessoaDTO buscarPessoaPorId(UUID idPessoa) {
+        log.info("[inicia] PessoaApplicationService - buscarPessoaPorId");
+        Pessoa pessoa = pessoaRepository.buscarPessoaPorId(idPessoa);
+        log.info("[finaliza] PessoaApplicationService - buscarPessoaPorId");
         return new PessoaDTO(pessoa);
     }
 
     @Override
-    public void alteraPessoa(PessoaAlteracao pessoaAlteracao, UUID idPessoa) {
-        log.info("[inicia] PessoaApplicationService - alteraPessoa");
-        Pessoa pessoa = pessoaRepository.buscaPessoaPorId(idPessoa);
+    public void alterarPessoa(PessoaAlteracao pessoaAlteracao, UUID idPessoa) {
+        log.info("[inicia] PessoaApplicationService - alterarPessoa");
+        Pessoa pessoa = pessoaRepository.buscarPessoaPorId(idPessoa);
         pessoa.alterar(pessoaAlteracao);
-        pessoaRepository.salva(pessoa);
-        log.info("[finaliza] PessoaApplicationService - alteraPessoa");
+        pessoaRepository.salvarPessoa(pessoa);
+        log.info("[finaliza] PessoaApplicationService - alterarPessoa");
     }
-
-
-
 }

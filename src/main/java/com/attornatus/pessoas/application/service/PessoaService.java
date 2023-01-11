@@ -1,19 +1,18 @@
 package com.attornatus.pessoas.application.service;
 
-import com.attornatus.enderecos.application.api.EnderecoRequest;
 import com.attornatus.pessoas.application.api.*;
 
 import java.util.List;
 import java.util.UUID;
 
 public interface PessoaService {
-    public PessoaResponse criarPessoa(PessoaRequest pessoaRequest);
+    public PessoaResponse adicionarPessoa(PessoaRequest pessoaRequest);
 
-    PessoaDTO buscaPessoaPorId(UUID idPessoa);
+    PessoaDTO buscarPessoaPorId(UUID idPessoa);
 
-    List<ListPessoas> buscaTodasPessoas();
+    List<ListPessoas> buscarTodasPessoas();
 
-    void alteraPessoa(PessoaAlteracao pessoaAlteracao, UUID idPessoa);
+    void alterarPessoa(PessoaAlteracao pessoaAlteracao, UUID idPessoa);
 
 
 }

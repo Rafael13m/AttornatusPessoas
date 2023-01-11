@@ -18,27 +18,27 @@ public class PessoaInfraRepository implements PessoaRepository {
 
     private final PessoaJpaRepository pessoaJpaRepository;
     @Override
-    public Pessoa salva(Pessoa pessoa) {
-        log.info("[inicia] PessoaInfraRepository - salva");
+    public Pessoa salvarPessoa(Pessoa pessoa) {
+        log.info("[inicia] PessoaInfraRepository - salvarPessoa");
         pessoaJpaRepository.save(pessoa);
-        log.info("[finaliza] PessoaInfraRepository - salva");
+        log.info("[finaliza] PessoaInfraRepository - salvarPessoa");
         return pessoa;
     }
 
     @Override
-    public Pessoa buscaPessoaPorId(UUID idPessoa) {
-        log.info("[inicia] PessoaInfraRepository - buscaPessoaPorId");
+    public Pessoa buscarPessoaPorId(UUID idPessoa) {
+        log.info("[inicia] PessoaInfraRepository - buscarPessoaPorId");
         Pessoa pessoa = pessoaJpaRepository.findById(idPessoa)
                 .orElseThrow();
-        log.info("[finaliza] PessoaInfraRepository - buscaPessoaPorId");
+        log.info("[finaliza] PessoaInfraRepository - buscarPessoaPorId");
         return pessoa;
     }
 
     @Override
-    public List<Pessoa> buscaTodasPessoas() {
-        log.info("[inicia] PessoaInfraRepository - buscaTodasPessoas");
+    public List<Pessoa> buscarTodasPessoas() {
+        log.info("[inicia] PessoaInfraRepository - buscarTodasPessoas");
         List<Pessoa> listPessoas = pessoaJpaRepository.findAll();
-        log.info("[finaliza] PessoaInfraRepository - buscaTodasPessoas");
+        log.info("[finaliza] PessoaInfraRepository - buscarTodasPessoas");
         return listPessoas;
     }
 }

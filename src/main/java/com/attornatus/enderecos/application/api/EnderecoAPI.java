@@ -21,6 +21,4 @@ public interface EnderecoAPI {
     @GetMapping (value ="/bucarenderecoprincipal/{idPessoa}")
     @ResponseStatus(code = HttpStatus.OK)
     List<EnderecoDTO> buscarEnderecoPrincipal(@PathVariable UUID idPessoa);
-
-
 }

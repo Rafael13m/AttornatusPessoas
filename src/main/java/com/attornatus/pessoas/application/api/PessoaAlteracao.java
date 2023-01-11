@@ -12,5 +12,4 @@ public class PessoaAlteracao {
     private String nome;
     private LocalDate dataNascimento;
     private List<Endereco> enderecos;
-
 }

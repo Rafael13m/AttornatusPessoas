@@ -15,9 +15,7 @@ public class PessoaDTO {
     private String nome;
     private LocalDate dataNascimento;
     private List<Endereco> enderecos;
-
     public PessoaDTO(Pessoa pessoa) {
-
         this.idPessoa = pessoa.getIdPessoa();
         this.nome = pessoa.getNome();
         this.dataNascimento = pessoa.getDataNascimento();

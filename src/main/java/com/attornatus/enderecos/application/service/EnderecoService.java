@@ -6,7 +6,7 @@ import com.attornatus.enderecos.application.api.EnderecoRequest;
 import java.util.List;
 import java.util.UUID;
 
-public interface EnderecosService {
+public interface EnderecoService {
 
     void adicionarEndereco(UUID idPessoa, EnderecoRequest enderecoRequest);
 

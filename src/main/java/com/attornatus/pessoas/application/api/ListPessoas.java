@@ -27,11 +27,9 @@ public class ListPessoas {
     }
 
     public ListPessoas(Pessoa listPessoas) {
-
         this.idPessoa = listPessoas.getIdPessoa();
         this.nome = listPessoas.getNome();
         this.dataNascimento = listPessoas.getDataNascimento();
         this.enderecos = listPessoas.getEnderecos();
-
     }
 }

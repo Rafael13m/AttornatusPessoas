@@ -15,33 +15,33 @@ import java.util.UUID;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class EnderecosApplicationService implements EnderecosService {
+public class EnderecoApplicationService implements EnderecoService {
 
     private final PessoaRepository pessoaRepository;
 
     public void adicionarEndereco(UUID idPessoa, EnderecoRequest enderecoRequest){
-        log.info("[inicia] EnderecosApplicationService - adicionaEndereco");
-        Pessoa pessoa = pessoaRepository.buscaPessoaPorId(idPessoa);
+        log.info("[inicia] EnderecoApplicationService - adicionarEndereco");
+        Pessoa pessoa = pessoaRepository.buscarPessoaPorId(idPessoa);
         pessoa.adicionarEndereco(enderecoRequest);
-        pessoaRepository.salva(pessoa);
-        log.info("[finaliza] EnderecosApplicationService - adicionaEndereco");
+        pessoaRepository.salvarPessoa(pessoa);
+        log.info("[finaliza] EnderecoApplicationService - adicionarEndereco");
     }
 
     @Override
     public List<EnderecoDTO> buscarEnderecosDePessoas(UUID idPessoa) {
-        log.info("[inicia] EnderecosApplicationService - buscarEnderecosDePessoas");
-        Pessoa pessoa = pessoaRepository.buscaPessoaPorId(idPessoa);
+        log.info("[inicia] EnderecoApplicationService - buscarEnderecosDePessoas");
+        Pessoa pessoa = pessoaRepository.buscarPessoaPorId(idPessoa);
         List<Endereco> enderecos = pessoa.getEnderecos();
-        log.info("[finaliza] EnderecosApplicationService - buscarEnderecosDePessoas");
+        log.info("[finaliza] EnderecoApplicationService - buscarEnderecosDePessoas");
         return EnderecoDTO.converte(enderecos);
     }
 
     @Override
     public List<EnderecoDTO> buscarEnderecoPrincipal(UUID idPessoa) {
-        log.info("[inicia] EnderecosApplicationService - buscarEnderecosDePessoas");
-        Pessoa pessoa = pessoaRepository.buscaPessoaPorId(idPessoa);
+        log.info("[inicia] EnderecoApplicationService - buscarEnderecosDePessoas");
+        Pessoa pessoa = pessoaRepository.buscarPessoaPorId(idPessoa);
         List<Endereco> endereco = pessoa.buscarEnderecoPrincipal();
-        log.info("[finaliza] EnderecosApplicationService - buscarEnderecosDePessoas");
+        log.info("[finaliza] EnderecoApplicationService - buscarEnderecosDePessoas");
         return EnderecoDTO.converte(endereco);
     }
 }
