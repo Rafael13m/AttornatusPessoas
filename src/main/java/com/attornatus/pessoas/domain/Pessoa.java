@@ -1,14 +1,12 @@
 package com.attornatus.pessoas.domain;
 
 
-import com.attornatus.enderecos.application.api.EnderecoDTO;
 import com.attornatus.enderecos.application.api.EnderecoRequest;
 import com.attornatus.enderecos.domain.Endereco;
 import com.attornatus.enderecos.domain.TipoEndereco;
-import com.attornatus.pessoas.application.api.ListPessoas;
 import com.attornatus.pessoas.application.api.PessoaAlteracao;
 import com.attornatus.pessoas.application.api.PessoaRequest;
-import com.attornatus.pessoas.handler.APIException;
+import com.attornatus.handler.APIException;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
