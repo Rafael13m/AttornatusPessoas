@@ -1,4 +1,4 @@
-package com.attornatus.pessoas.handler;
+package com.attornatus.handler;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;

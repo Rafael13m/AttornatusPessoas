@@ -1,16 +1,14 @@
 package com.attornatus.pessoas.infra;
 
-import com.attornatus.pessoas.application.api.ListPessoas;
 import com.attornatus.pessoas.application.repository.PessoaRepository;
 import com.attornatus.pessoas.domain.Pessoa;
-import com.attornatus.pessoas.handler.APIException;
+import com.attornatus.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Repository
