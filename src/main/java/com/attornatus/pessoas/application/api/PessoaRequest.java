@@ -1,6 +1,6 @@
 package com.attornatus.pessoas.application.api;
 
-import com.attornatus.enderecos.domain.Endereco;
+import com.attornatus.enderecos.application.api.EnderecoRequest;
 import lombok.Data;
 import lombok.Getter;
 
@@ -12,5 +12,5 @@ import java.util.List;
 public class PessoaRequest {
     private String Nome;
     private LocalDate DataNascimento;
-    private List<Endereco> enderecos;
+    private List<EnderecoRequest> enderecos;
 }

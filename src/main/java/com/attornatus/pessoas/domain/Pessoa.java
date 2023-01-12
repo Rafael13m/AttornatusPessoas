@@ -1,9 +1,11 @@
 package com.attornatus.pessoas.domain;
 
 
+import com.attornatus.enderecos.application.api.EnderecoDTO;
 import com.attornatus.enderecos.application.api.EnderecoRequest;
 import com.attornatus.enderecos.domain.Endereco;
 import com.attornatus.enderecos.domain.TipoEndereco;
+import com.attornatus.pessoas.application.api.ListPessoas;
 import com.attornatus.pessoas.application.api.PessoaAlteracao;
 import com.attornatus.pessoas.application.api.PessoaRequest;
 import com.attornatus.pessoas.handler.APIException;
@@ -15,6 +17,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Entity
 @NoArgsConstructor
@@ -33,7 +36,10 @@ public class Pessoa {
     public Pessoa(PessoaRequest pessoaRequest) {
         this.nome = pessoaRequest.getNome();
         this.dataNascimento = pessoaRequest.getDataNascimento();
-        this.enderecos = pessoaRequest.getEnderecos();
+        List<EnderecoRequest> enderecoRequest = pessoaRequest.getEnderecos();
+        this.enderecos = enderecoRequest.stream()
+                .map(endereco -> new Endereco(endereco))
+                .collect(Collectors.toList());
     }
 
     public void alterar(PessoaAlteracao pessoaAlteracao) {

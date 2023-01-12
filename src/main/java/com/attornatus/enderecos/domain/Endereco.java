@@ -27,6 +27,6 @@ public class Endereco {
         this.cep = enderecoRequest.getCep();
         this.numero = enderecoRequest.getNumero();
         this.cidade = enderecoRequest.getCidade();
-        this.tipoEndereco = TipoEndereco.SECUNDARIO;
+        this.tipoEndereco = enderecoRequest.getTipoEndereco();
     }
 }
