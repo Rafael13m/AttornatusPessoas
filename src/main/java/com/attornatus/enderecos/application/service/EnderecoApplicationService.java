@@ -37,11 +37,11 @@ public class EnderecoApplicationService implements EnderecoService {
     }
 
     @Override
-    public List<EnderecoDTO> buscarEnderecoPrincipal(UUID idPessoa) {
+    public EnderecoDTO buscarEnderecoPrincipal(UUID idPessoa) {
         log.info("[inicia] EnderecoApplicationService - buscarEnderecosDePessoas");
         Pessoa pessoa = pessoaRepository.buscarPessoaPorId(idPessoa);
-        List<Endereco> endereco = pessoa.buscarEnderecoPrincipal();
+        Endereco endereco = pessoa.buscarEnderecoPrincipal();
         log.info("[finaliza] EnderecoApplicationService - buscarEnderecosDePessoas");
-        return EnderecoDTO.converte(endereco);
+        return new EnderecoDTO(endereco);
     }
 }
