@@ -5,8 +5,8 @@
   spring:
     datasource:
       driverClassName: org.h2.Driver
-      url: ${DB_URL:jdbc:h2:mem:attornatus}
-      username:
+      url: jdbc:h2:mem:attornatus
+      username: sa
       password:
 
     jpa:

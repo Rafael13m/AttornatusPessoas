@@ -10,7 +10,7 @@ import java.util.UUID;
 @RequestMapping("v1/enderecos")
 public interface EnderecoAPI {
 
-    @PostMapping(value = "/novoendereco/{idPessoa}")
+    @PostMapping(value = "/{idPessoa}")
     @ResponseStatus(code = HttpStatus.CREATED)
     void adicionarEndereco(@PathVariable UUID idPessoa, @RequestBody EnderecoRequest enderecoRequest);
 
@@ -18,7 +18,7 @@ public interface EnderecoAPI {
     @ResponseStatus(code = HttpStatus.OK)
     List<EnderecoDTO> buscarEnderecosDePessoa(@PathVariable UUID idPessoa);
 
-    @GetMapping (value ="/bucarenderecoprincipal/{idPessoa}")
+    @GetMapping (value ="/enderecoprincipal/{idPessoa}")
     @ResponseStatus(code = HttpStatus.OK)
     List<EnderecoDTO> buscarEnderecoPrincipal(@PathVariable UUID idPessoa);
 }
