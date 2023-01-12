@@ -6,8 +6,10 @@ import com.attornatus.enderecos.domain.Endereco;
 import com.attornatus.enderecos.domain.TipoEndereco;
 import com.attornatus.pessoas.application.api.PessoaAlteracao;
 import com.attornatus.pessoas.application.api.PessoaRequest;
+import com.attornatus.pessoas.handler.APIException;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.http.HttpStatus;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -49,6 +51,6 @@ public class Pessoa {
         return enderecos.stream()
                 .filter(endereco -> endereco.getTipoEndereco().equals(TipoEndereco.PRINCIPAL))
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("Endereço principal não encontrado"));
+                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Endereço principal não encontrado"));
     }
 }
