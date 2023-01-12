@@ -1,11 +1,9 @@
 package com.attornatus.enderecos.application.api;
 
 import com.attornatus.enderecos.domain.Endereco;
-import com.attornatus.enderecos.domain.EnderecoPrincipal;
+import com.attornatus.enderecos.domain.TipoEndereco;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -19,7 +17,7 @@ public class EnderecoDTO {
     private int numero;
     private String cidade;
 
-    private EnderecoPrincipal enderecoPrincipal = EnderecoPrincipal.PRINCIPAL;
+    private TipoEndereco tipoEndereco = TipoEndereco.PRINCIPAL;
 
     public EnderecoDTO(Endereco endereco) {
 
@@ -28,7 +26,7 @@ public class EnderecoDTO {
         this.cep = endereco.getCep();
         this.numero = endereco.getNumero();
         this.cidade = endereco.getCidade();
-        this.enderecoPrincipal = endereco.getEnderecoPrincipal();
+        this.tipoEndereco = endereco.getTipoEndereco();
 
     }
 

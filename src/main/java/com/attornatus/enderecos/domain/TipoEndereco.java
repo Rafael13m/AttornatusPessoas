@@ -1,5 +1,5 @@
 package com.attornatus.enderecos.domain;
 
-public enum EnderecoPrincipal {
+public enum TipoEndereco {
     PRINCIPAL, SECUNDARIO
 }

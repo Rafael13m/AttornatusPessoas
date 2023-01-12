@@ -20,13 +20,13 @@ public class Endereco {
     private int cep;
     private int numero;
     private String cidade;
-    private EnderecoPrincipal enderecoPrincipal = EnderecoPrincipal.PRINCIPAL;
+    private TipoEndereco tipoEndereco = TipoEndereco.PRINCIPAL;
 
     public Endereco(EnderecoRequest enderecoRequest) {
         this.logradouro = enderecoRequest.getLogradouro();
         this.cep = enderecoRequest.getCep();
         this.numero = enderecoRequest.getNumero();
         this.cidade = enderecoRequest.getCidade();
-        this.enderecoPrincipal = EnderecoPrincipal.SECUNDARIO;
+        this.tipoEndereco = TipoEndereco.SECUNDARIO;
     }
 }
