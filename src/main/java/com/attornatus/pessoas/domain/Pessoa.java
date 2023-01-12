@@ -45,9 +45,10 @@ public class Pessoa {
         enderecos.add(new Endereco(enderecoRequest));
     }
 
-    public List<Endereco> buscarEnderecoPrincipal(){
+    public Endereco buscarEnderecoPrincipal(){
         return enderecos.stream()
-                .filter(endereco -> endereco.getTipoEndereco() == TipoEndereco.PRINCIPAL)
-                .collect(Collectors.toList());
+                .filter(endereco -> endereco.getTipoEndereco().equals(TipoEndereco.PRINCIPAL))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Endereço principal não encontrado"));
     }
 }

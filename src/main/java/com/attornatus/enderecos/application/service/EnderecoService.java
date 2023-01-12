@@ -12,5 +12,5 @@ public interface EnderecoService {
 
     List<EnderecoDTO> buscarEnderecosDePessoas(UUID idPessoa);
 
-    List<EnderecoDTO> buscarEnderecoPrincipal(UUID idPessoa);
+    EnderecoDTO buscarEnderecoPrincipal(UUID idPessoa);
 }
