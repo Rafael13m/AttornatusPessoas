@@ -14,13 +14,13 @@ O projeto AttornatusPessoas foi desenvolvido como para resolver o desáfio técn
 - Lombok
 
 ## Funcionalidades da API
-•	Criar uma pessoa
-•	Editar uma pessoa
-•	Consultar uma pessoa
-•	Listar pessoas
-•	Criar endereço para pessoa
-•	Listar endereços da pessoa
-•	Poder informar qual endereço é o principal da pessoa  
+-	Criar uma pessoa
+-	Editar uma pessoa
+-	Consultar uma pessoa
+-	Listar pessoas
+-	Criar endereço para pessoa
+-	Listar endereços da pessoa
+-	Poder informar qual endereço é o principal da pessoa  
 
 
 ## Autor
